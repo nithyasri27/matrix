@@ -85,6 +85,9 @@ public class matrix {
             case "-":
                 subtractMatrices(matrix1, matrix2);
                 break;
+            case "*":
+                multiplyMatrices(matrix1, matrix2);
+                break;
             default:
                 System.out.println("Operator not valid");
                 break;
@@ -155,6 +158,30 @@ public class matrix {
             }
         } else {
             System.out.println("In order to add or subtract matrices they both must have the same number of rows \n and the same number of columns");
+        }
+    }
+    public static int[][] createMatrix(int numRows, int numColumns){
+        int[][] matrix = new int[numRows][numColumns];
+        return matrix;
+    }
+    // All methods below this line perform operations
+    public static void multiplyMatrices(int[][] matrix1, int[][] matrix2){
+        boolean status = checkIfValidMult(matrix1, matrix2);
+        if(status == true){
+
+            for(int i=0; i<matrix1.length; i++){
+                int total = 0;
+                for(int j = 0; j<matrix2[0].length; j++){
+                    int fnum = matrix1[i][j];
+                    int snum = matrix2[j][i];
+                    int product = fnum*snum;
+                    total += product;
+                }
+                System.out.print(total+" ");
+
+            }
+        }else{
+            System.out.println("Invalid Input");
         }
     }
 
