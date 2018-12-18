@@ -82,7 +82,9 @@ public class matrix {
             case "+":
                 addMatrices(matrix1, matrix2);
                 break;
-
+            case "-":
+                subtractMatrices(matrix1, matrix2);
+                break;
             default:
                 System.out.println("Operator not valid");
                 break;
@@ -139,7 +141,22 @@ public class matrix {
             System.out.println("In order to add or subtract matrices they both must have the same number of rows \n and the same number of columns");
         }
     }
-
+    public static void subtractMatrices(int[][] matrix1, int[][] matrix2) {
+        boolean status = checkIfValidAddSub(matrix1, matrix2);
+        if (status == true) {
+            for (int i = 0; i < matrix1.length; i++) {
+                for (int j = 0; j < matrix1[0].length; j++) {
+                    int charM1 = matrix1[i][j];
+                    int charM2 = matrix2[i][j];
+                    int resultant = charM1 - charM2;
+                    System.out.print(resultant + " ");
+                }
+                System.out.print("\n");
+            }
+        } else {
+            System.out.println("In order to add or subtract matrices they both must have the same number of rows \n and the same number of columns");
+        }
+    }
 
     public static boolean checkIfValidAddSub(int[][] matrix1, int[][] matrix2){
         boolean status;
