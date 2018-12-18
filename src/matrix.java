@@ -160,10 +160,7 @@ public class matrix {
             System.out.println("In order to add or subtract matrices they both must have the same number of rows \n and the same number of columns");
         }
     }
-    public static int[][] createMatrix(int numRows, int numColumns){
-        int[][] matrix = new int[numRows][numColumns];
-        return matrix;
-    }
+    
     // All methods below this line perform operations
     public static void multiplyMatrices(int[][] matrix1, int[][] matrix2){
         boolean status = checkIfValidMult(matrix1, matrix2);
